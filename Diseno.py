@@ -23,26 +23,30 @@ class ventanappal(QMainWindow):
 
         #self.btn_dispon_ini.clicked.connect(self.consultabd)
         self.btn_enviar_ini.clicked.connect(self.reservaeventos)
-        self.btn_refresh_leven.clicked.connect(lambda: self.consultaevento)
+        self.btn_refresh_leven.clicked.connect(self.consultaevento)
         #self.btn_cancelar_ini_clicked.connect(self.close)
 
     def consultaevento(self):
         datos = self.BBDD.consultabd()
         i = len(datos)
-        self.tW_leven.setRowCount(i)
-        tablerow = 0
-        print(consulta)
-        print(consulta[0][0])
+        print(datos)
+        self.tableW.setRowCount(i)
+        print(i)
+        tablerow = 1
+        print(datos[0])
+        self.tableW.setItem(tablerow, 0, row[0])
         for row in datos:
-            self.tW_leven.setItem(tablerow, 0, QtWidgets.QTableWidgetItem(row[0]))
-            self.tW_leven.setItem(tablerow, 1, QtWidgets.QTableWidgetItem(row[1]))
-            self.tW_leven.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(row[2]))
-            self.tW_leven.setItem(tablerow, 3, QtWidgets.QTableWidgetItem(row[3]))
-            self.tW_leven.setItem(tablerow, 4, QtWidgets.QTableWidgetItem(row[4]))
-            self.tW_leven.setItem(tablerow, 5, QtWidgets.QTableWidgetItem(row[5]))
-            self.tW_leven.setItem(tablerow, 6, QtWidgets.QTableWidgetItem(row[6]))
-            self.tW_leven.setItem(tablerow, 7, QtWidgets.QTableWidgetItem(row[7]))
-            tablerow += 1
+            print(row[0])
+            self.tableW.setItem(tablerow, 0, row[0])
+            self.tableW.setItem(tablerow, 1, row[1])
+            self.tableW.setItem(tablerow, 2, QtWidgets.QTableWidgetItem(row[2]))
+            self.tableW.setItem(tablerow, 3, QtWidgets.QTableWidgetItem(row[3]))
+            self.tableW.setItem(tablerow, 4, QtWidgets.QTableWidgetItem(row[4]))
+            self.tableW.setItem(tablerow, 5, QtWidgets.QTableWidgetItem(row[5]))
+            self.tableW.setItem(tablerow, 6, QtWidgets.QTableWidgetItem(row[6]))
+            self.tableW.setItem(tablerow, 7, QtWidgets.QTableWidgetItem(row[7]))
+            tablerow+=1
+
     def reservaeventos(self):
         ID1 = self.LE_ID_ini.int()
         Nombre1 = self.LE_Nombre_ini().text()
