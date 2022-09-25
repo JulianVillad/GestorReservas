@@ -26,5 +26,5 @@ class BaseDatos():
 
 if __name__ == "__main__":
     inst = BaseDatos()
-    inst.reservabd(39582645,"Maria","Palacios",3125796351,"mpal@correo.co",2,"30/09/2022","31/09/2022")
-    #consultabd()
+    #inst.reservabd(39582645,"Maria","Palacios",3125796351,"mpal@correo.co",2,"30/09/2022","31/09/2022")
+    inst.consultabd()
