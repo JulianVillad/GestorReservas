@@ -997,7 +997,7 @@ color: rgb(255, 255, 255);</string>
                  <property name="frameShadow">
                   <enum>QFrame::Raised</enum>
                  </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_8" stretch="1,1,1,1,1,0">
+                 <layout class="QVBoxLayout" name="verticalLayout_8" stretch="1,1,1,1,0">
                   <property name="spacing">
                    <number>0</number>
                   </property>
@@ -1032,31 +1032,6 @@ color: rgb(255, 255, 255);</string>
                     <item>
                      <widget class="QLineEdit" name="LE_finicial_ini">
                       <property name="readOnly">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="3,5">
-                    <item>
-                     <widget class="QLabel" name="labeldays">
-                      <property name="font">
-                       <font>
-                        <pointsize>10</pointsize>
-                        <weight>75</weight>
-                        <bold>true</bold>
-                       </font>
-                      </property>
-                      <property name="text">
-                       <string>Cantidad de días:</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLineEdit" name="LE_dias_ini">
-                      <property name="readOnly">
                        <bool>false</bool>
                       </property>
                      </widget>
@@ -1082,7 +1057,7 @@ color: rgb(255, 255, 255);</string>
                     <item>
                      <widget class="QLineEdit" name="LE_ffinal_ini">
                       <property name="readOnly">
-                       <bool>true</bool>
+                       <bool>false</bool>
                       </property>
                      </widget>
                     </item>
@@ -1107,26 +1082,26 @@ color: rgb(255, 255, 255);</string>
                     <item>
                      <widget class="QComboBox" name="cBsalon_ini">
                       <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
+                       <enum>Qt::RightToLeft</enum>
                       </property>
                       <item>
                        <property name="text">
-                        <string>Salón 1 (Max. 400 personas)</string>
+                        <string>1</string>
                        </property>
                       </item>
                       <item>
                        <property name="text">
-                        <string>Salón 2 (Máx. 200 personas)</string>
+                        <string>2</string>
                        </property>
                       </item>
                       <item>
                        <property name="text">
-                        <string>Salón 3 (Máx. 100 personas)</string>
+                        <string>3</string>
                        </property>
                       </item>
                       <item>
                        <property name="text">
-                        <string>Salón 4 (Máx. 50 personas)</string>
+                        <string>4</string>
                        </property>
                       </item>
                      </widget>
@@ -1134,7 +1109,7 @@ color: rgb(255, 255, 255);</string>
                    </layout>
                   </item>
                   <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="1,2,2">
+                   <layout class="QHBoxLayout" name="horizontalLayout_11" stretch="1,2">
                     <item>
                      <spacer name="horizontalSpacer_2">
                       <property name="orientation">
@@ -1150,15 +1125,14 @@ color: rgb(255, 255, 255);</string>
                     </item>
                     <item>
                      <widget class="QPushButton" name="btn_dispon_ini">
+                      <property name="maximumSize">
+                       <size>
+                        <width>170</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
                       <property name="text">
                        <string>Consultar disponibilidad</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="btn_reservar_ini">
-                      <property name="text">
-                       <string>Reservar</string>
                       </property>
                      </widget>
                     </item>
@@ -1184,6 +1158,12 @@ color: rgb(255, 255, 255);</string>
                     </item>
                     <item>
                      <widget class="QLineEdit" name="LE_Dispon_ini">
+                      <property name="maximumSize">
+                       <size>
+                        <width>170</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
                       <property name="readOnly">
                        <bool>true</bool>
                       </property>
@@ -1681,6 +1661,11 @@ color: rgb(255, 255, 255);</string>
                  </column>
                  <column>
                   <property name="text">
+                   <string>Salon</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text">
                    <string>Fecha_inicial</string>
                   </property>
                  </column>
@@ -1705,6 +1690,25 @@ color: rgb(255, 255, 255);</string>
                     </size>
                    </property>
                   </spacer>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btn_ordenar_leven">
+                   <property name="minimumSize">
+                    <size>
+                     <width>120</width>
+                     <height>37</height>
+                    </size>
+                   </property>
+                   <property name="maximumSize">
+                    <size>
+                     <width>120</width>
+                     <height>37</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>Ordenar por fecha</string>
+                   </property>
+                  </widget>
                  </item>
                  <item>
                   <widget class="QPushButton" name="btn_refresh_leven">
@@ -1778,10 +1782,40 @@ color: rgb(255, 255, 255);</string>
               <number>0</number>
              </property>
              <item>
-              <layout class="QVBoxLayout" name="verticalLayout_6" stretch="2,3">
+              <layout class="QVBoxLayout" name="verticalLayout_6" stretch="0,2,0,0,3">
                <property name="spacing">
                 <number>10</number>
                </property>
+               <item>
+                <widget class="QLabel" name="label">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>37</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>MS Shell Dlg 2</family>
+                   <pointsize>10</pointsize>
+                   <weight>9</weight>
+                   <italic>false</italic>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(42, 85, 101);
+font: 75 10pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(255, 255, 255);</string>
+                 </property>
+                 <property name="text">
+                  <string>Ingrese la fecha inicial y el salón</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
                <item>
                 <widget class="QFrame" name="frame_10">
                  <property name="minimumSize">
@@ -1802,7 +1836,7 @@ color: rgb(255, 255, 255);</string>
                  <property name="frameShadow">
                   <enum>QFrame::Raised</enum>
                  </property>
-                 <layout class="QVBoxLayout" name="verticalLayout_9" stretch="1,1,1,1">
+                 <layout class="QVBoxLayout" name="verticalLayout_9" stretch="1,1,1">
                   <property name="spacing">
                    <number>15</number>
                   </property>
@@ -1837,31 +1871,6 @@ color: rgb(255, 255, 255);</string>
                     <item>
                      <widget class="QLineEdit" name="LE_finicial_mod">
                       <property name="readOnly">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_13" stretch="3,5">
-                    <item>
-                     <widget class="QLabel" name="labeldays_2">
-                      <property name="font">
-                       <font>
-                        <pointsize>10</pointsize>
-                        <weight>75</weight>
-                        <bold>true</bold>
-                       </font>
-                      </property>
-                      <property name="text">
-                       <string>Cantidad de días:</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLineEdit" name="LE_dias_mod">
-                      <property name="readOnly">
                        <bool>false</bool>
                       </property>
                      </widget>
@@ -1887,7 +1896,7 @@ color: rgb(255, 255, 255);</string>
                     <item>
                      <widget class="QLineEdit" name="LE_ffinal_mod">
                       <property name="readOnly">
-                       <bool>true</bool>
+                       <bool>false</bool>
                       </property>
                      </widget>
                     </item>
@@ -1912,26 +1921,26 @@ color: rgb(255, 255, 255);</string>
                     <item>
                      <widget class="QComboBox" name="cB_salon_mod">
                       <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
+                       <enum>Qt::RightToLeft</enum>
                       </property>
                       <item>
                        <property name="text">
-                        <string>Salón 1 (Max. 400 personas)</string>
+                        <string>1</string>
                        </property>
                       </item>
                       <item>
                        <property name="text">
-                        <string>Salón 2 (Máx. 200 personas)</string>
+                        <string>2</string>
                        </property>
                       </item>
                       <item>
                        <property name="text">
-                        <string>Salón 3 (Máx. 100 personas)</string>
+                        <string>3</string>
                        </property>
                       </item>
                       <item>
                        <property name="text">
-                        <string>Salón 4 (Máx. 50 personas)</string>
+                        <string>4</string>
                        </property>
                       </item>
                      </widget>
@@ -1939,6 +1948,43 @@ color: rgb(255, 255, 255);</string>
                    </layout>
                   </item>
                  </layout>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="btn_consultar_mod">
+                 <property name="text">
+                  <string>Consultar</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="lbl_alerta_mod">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>37</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>MS Shell Dlg 2</family>
+                   <pointsize>10</pointsize>
+                   <weight>9</weight>
+                   <italic>false</italic>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(42, 85, 101);
+font: 75 10pt &quot;MS Shell Dlg 2&quot;;
+color: rgb(255, 255, 255);</string>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignCenter</set>
+                 </property>
                 </widget>
                </item>
                <item>
@@ -1982,7 +2028,11 @@ color: rgb(255, 255, 255);</string>
                 </widget>
                </item>
                <item row="0" column="1">
-                <widget class="QLineEdit" name="LE_ID_mod"/>
+                <widget class="QLineEdit" name="LE_ID_mod">
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
                </item>
                <item row="1" column="0">
                 <widget class="QLabel" name="Nombre_2">
@@ -1999,7 +2049,11 @@ color: rgb(255, 255, 255);</string>
                 </widget>
                </item>
                <item row="1" column="1">
-                <widget class="QLineEdit" name="LE_nombre_mod"/>
+                <widget class="QLineEdit" name="LE_nombre_mod">
+                 <property name="readOnly">
+                  <bool>false</bool>
+                 </property>
+                </widget>
                </item>
                <item row="2" column="0">
                 <widget class="QLabel" name="lbl_apellido_2">
@@ -2016,7 +2070,11 @@ color: rgb(255, 255, 255);</string>
                 </widget>
                </item>
                <item row="2" column="1">
-                <widget class="QLineEdit" name="LE_apellido_mod"/>
+                <widget class="QLineEdit" name="LE_apellido_mod">
+                 <property name="readOnly">
+                  <bool>false</bool>
+                 </property>
+                </widget>
                </item>
                <item row="3" column="0">
                 <widget class="QLabel" name="lbl_celular_2">
@@ -2033,7 +2091,11 @@ color: rgb(255, 255, 255);</string>
                 </widget>
                </item>
                <item row="3" column="1">
-                <widget class="QLineEdit" name="LE_cel_mod"/>
+                <widget class="QLineEdit" name="LE_cel_mod">
+                 <property name="readOnly">
+                  <bool>false</bool>
+                 </property>
+                </widget>
                </item>
                <item row="4" column="0">
                 <widget class="QLabel" name="lbl_correo_2">
@@ -2050,7 +2112,11 @@ color: rgb(255, 255, 255);</string>
                 </widget>
                </item>
                <item row="4" column="1">
-                <widget class="QLineEdit" name="LE_correo_mod"/>
+                <widget class="QLineEdit" name="LE_correo_mod">
+                 <property name="readOnly">
+                  <bool>false</bool>
+                 </property>
+                </widget>
                </item>
                <item row="5" column="1">
                 <widget class="QPushButton" name="btn_modificar_mod">
