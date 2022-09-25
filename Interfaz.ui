@@ -602,7 +602,7 @@ alternate-background-color: rgb(116, 163, 173);</string>
            <bool>true</bool>
           </property>
           <property name="currentIndex">
-           <number>2</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="pg_inicio">
            <property name="enabled">
@@ -1155,19 +1155,6 @@ color: rgb(255, 255, 255);</string>
                        </size>
                       </property>
                      </spacer>
-                    </item>
-                    <item>
-                     <widget class="QLineEdit" name="LE_Dispon_ini">
-                      <property name="maximumSize">
-                       <size>
-                        <width>170</width>
-                        <height>16777215</height>
-                       </size>
-                      </property>
-                      <property name="readOnly">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
                     </item>
                    </layout>
                   </item>

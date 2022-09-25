@@ -28,6 +28,7 @@ class ventanappal(QMainWindow):                                     #Programa de
         self.btn_cancelar_mod.clicked.connect(self.cancelarevento)      #Botón cancelar evento
         self.btn_modificar_mod.clicked.connect(self.modificarevento)    #Botón modificar evento
         self.btn_ordenar_leven.clicked.connect(self.ordenartabla)       #Botón ordenar por fecha
+        self.btn_dispon_ini.clicked.connect(self.consdis)               #Botón consultar disponibilidad
 
     def consultaevento(self):                                       #Consulta de eventos
         datos = self.BBDD.consultabd()
@@ -117,6 +118,19 @@ class ventanappal(QMainWindow):                                     #Programa de
     
     def ordenartabla(self):
         self.BBDD.orden()
+        
+    def consdis(self):
+        datos = self.BBDD.consultabd()
+        Fini = str(self.LE_finicial_ini.text())
+        Ffin = str(self.LE_finicial_ini.text())
+        Sln = str(self.cBsalon_ini.currentText())
+        i = 0
+        for row in datos:
+            if Fini == datos[i][6] and Sln == datos[i][5]:
+                self.lbl_confirm_ini.setText('NO DISPONIBLE')
+            else:
+                self.lbl_confirm_ini.setText('DISPONIBLE')
+        
         
         
 if __name__ == "__main__":              #Evita que se ejecuten los comandos, solo las funciones definidas
